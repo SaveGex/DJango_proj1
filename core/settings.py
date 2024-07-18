@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'pages.main',
-    'pages.blog'
+    'pages.blog',
+    'pages.HomeWork',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ DATABASES = {
         "USER": "common_user",
         "PASSWORD": "2558",
         "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "PORT": "5432", 
     }
 }
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Post
+from .models import Post 
 # Create your views here.
 def blog_index(request):
 
@@ -9,4 +9,4 @@ def blog_index(request):
     context = {
         "all_posts": all_posts
     }
-    return render(request, "blog/index.html", context)
+    return render(request, "blog/index.html", context) # kpei4ny genius of this program 

@@ -10,12 +10,13 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {% for post in all_posts %}
         <div class="card glass w-96">
-            
+            {% comment %} RickRoll {% endcomment %}
             <figure>
             <img
                 src="{% if not post.image %}https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
                 {% else %}
-                    https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user                
+                   https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif                
+
                 {% endif %}
                 "
                 alt="car!" />
