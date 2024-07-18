@@ -1,0 +1,27 @@
+<div class="navbar bg-base-100">
+    <div class="containet mx-auto">
+        <div class="flex-1">
+        <a class="btn btn-ghost text-xl" href="{% url 'main:index' %}">DJANGO❤️</a>
+        </div>
+        <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+            <li style="flex-direction: row;">  
+                
+                
+                <a href="{% url 'main:lol' %}">LOL1</a>
+                <a href="{% url 'blog:index' %}">BLOG</a>
+                
+            </li>
+            <li>
+            {% comment %} <details>
+                <summary>Parent</summary>
+                <ul class="bg-base-100 rounded-t-none p-2">
+                <li><a>Link 1</a></li>
+                <li><a>Link 2</a></li>
+                </ul>
+            </details> {% endcomment %}
+            </li>
+        </ul>
+        </div>
+    </div>
+  </div>
