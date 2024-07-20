@@ -7,9 +7,10 @@
   <h1>Blog, DJHTML!</h1>
   <p>You are in the blog html page</p>
   <hr/>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
     {% for post in all_posts %}
-        <div class="card glass w-96">
+        <div class="card glass w-96 hover:bg-base-200 transition-all duration-300">
+          <a href="{% url 'blog:detail' post.id %}">
             {% comment %} RickRoll {% endcomment %}
             <figure>
             <img
@@ -23,10 +24,8 @@
             </figure>
             <div class="card-body">
             <h2 class="card-title"> {{ post.title }}</h2>
-            <p>{{ post.content }}</p>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary">Learn now!</button>
-            </div>
+          </a>
+            
             </div>
         </div>
     {% endfor %}
