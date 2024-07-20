@@ -3,11 +3,12 @@
 {% block title %}{%endblock%}
 
 {%block content%}
-<div class="card card glass w-96" style="width: 18rem;">
+
     <img
     src="{% if not post.image %}https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
     {% else %}
-       https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif                
+        {{ post.image.url }}                
+               
 
     {% endif %}
     "
@@ -19,5 +20,5 @@
       <a href="{% url 'blog:index' %}" class="btn btn-primary">Go somewhere</a>
       <p>{{post.created_at}}</p>
     </div>
-  </div>
+
 {%endblock%}
