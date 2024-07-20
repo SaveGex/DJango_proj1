@@ -3,8 +3,9 @@
 {% block title %}{%endblock%}
 
 {%block content%}
+  <div class="my-4 rounded-lg bg-base-200 p-4">
 
-    <img
+    <img class=" w-1/3"
     src="{% if not post.image %}https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
     {% else %}
         {{ post.image.url }}                
@@ -20,5 +21,6 @@
       <a href="{% url 'blog:index' %}" class="btn btn-primary">Go somewhere</a>
       <p>{{post.created_at}}</p>
     </div>
+  </div>
 
 {%endblock%}

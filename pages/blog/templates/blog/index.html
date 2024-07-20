@@ -2,33 +2,60 @@
 
 {% block title %}Blog{% endblock %}
 
-
 {% block content %}
-  <h1>Blog, DJHTML!</h1>
-  <p>You are in the blog html page</p>
-  <hr/>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-    {% for post in all_posts %}
-        <div class="card glass w-96 hover:bg-base-200 transition-all duration-300">
-          <a href="{% url 'blog:detail' post.id %}">
-            {% comment %} RickRoll {% endcomment %}
-            <figure>
-            <img
-                src="{% if not post.image %}
-                https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
-                {% else %}
-                   {{ post.image.url }}                
-
-                {% endif %}
-                "
-                alt="car!" />
-            </figure>
-            <div class="card-body">
-            <h2 class="card-title"> {{ post.title }}</h2>
-          </a>
+  <div class="my-4 rounded-lg bg-base-200 p-4">
+    <h1 class = "text-3xl font-bold md-4 mb-4">Blog, DJHTML!</h1>
+    <a onclick="my_modal_4.showModal()" class="btn btn-primary">Create post</a>
+    <hr class="my-4 border-2 border-gray-200"/>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-8">
+      {% for post in all_posts %}
+      <a href="{% url 'blog:detail' post.id %}">
+          <div class="card glass w-96 w-full w-1/3 w-1/4 hover:bg-base-200 transition-all duration-300">
             
+              <figure>
+              <img class="object-fill h-72 w-full"
+                  src="{% if not post.image %}
+                  https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
+                  {% else %}
+                    {{ post.image.url }}
+
+                  {% endif %}
+                  "
+                  alt="car!" />
+              </figure>
+              <div class="card-body">
+              <h2 class="card-title"> {{ post.title }}</h2>
             </div>
-        </div>
-    {% endfor %}
+          </div>
+        </a>
+
+      {% endfor %}
+    </div>
   </div>
+
+
+
+  <!-- You can open the modal using ID.showModal() method -->
+<dialog id="my_modal_4" class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <form method="dialog">
+      <!-- if there is a button, it will close the modal -->
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+
+    </form>
+    <h3 class="text-lg font-bold">Crete post!</h3>
+    <form action = "{% url 'blog:create' %}" method="post" enctype = "multipart/form-data" class="modal-box">
+      {% csrf_token %}
+      {{create_form}}
+      <button class="btn btn-primary">Create</button>
+    </form>
+    <div class="modal-action">
+      
+    </div>
+  </div>
+</dialog>
+  <!-- You can open the modal using ID.showModal() method -->
+  <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    
+  </dialog>
 {% endblock %}
